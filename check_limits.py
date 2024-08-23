@@ -5,12 +5,17 @@ def check_tempearture(temperature):
     global return_value
     return_value = False
 
+def validate_soc(soc):
+    if soc < 20 or soc > 80:
+        print('State of Charge is out of range!')
+        return False
+    else:
+        return True
+    
 def check_soc(soc):
    global return_value
    if return_value is True:
-       if soc < 20 or soc > 80:
-        print('State of Charge is out of range!')
-        return_value = False
+     return_value = validate_soc(soc)
 
 def check_charge_rate(charge_rate):
   global return_value
