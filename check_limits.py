@@ -1,9 +1,12 @@
 return_value = True
 def check_tempearture(temperature):
+  global return_value
   if temperature < 0 or temperature > 45:
     print('Temperature is out of range!')
-    global return_value
     return_value = False
+  else:
+    return_value = True
+
 
 def validate_soc(soc):
     if soc < 20 or soc > 80:
